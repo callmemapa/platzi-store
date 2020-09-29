@@ -16,16 +16,16 @@ export class ProductsComponent implements OnInit {
     private productsService: ProductsService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.fetchProducts();
   }
 
-  clickProduct(id: number) {
+  clickProduct(id: number): void {
     console.log('product');
     console.log(id);
   }
 
-  fetchProducts() {
+  fetchProducts(): void {
     this.productsService.getAllProducts()
     .subscribe(products => {
       this.products = products;
